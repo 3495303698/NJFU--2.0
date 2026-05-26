@@ -1,0 +1,84 @@
+词法分析器 - 编译和运行说明
+=====================================
+
+由于系统未检测到C++编译器，请按照以下步骤进行编译：
+
+方法一：安装MinGW-w64（推荐）
+---------------------------
+1. 下载MinGW-w64：
+   - 访问：https://www.mingw-w64.org/downloads/
+   - 或使用MSYS2：https://www.msys2.org/
+
+2. 安装后，将bin目录添加到系统PATH环境变量
+
+3. 打开命令提示符或PowerShell，执行：
+   g++ -std=c++11 main.cpp lexer.cpp -o 词法分析器.exe
+
+4. 运行程序：
+   词法分析器.exe program1.txt
+
+
+方法二：使用Visual Studio
+-------------------------
+1. 打开Visual Studio
+2. 创建新的控制台应用程序项目
+3. 将以下文件添加到项目：
+   - main.cpp
+   - lexer.cpp
+   - lexer.h
+4. 编译并运行
+
+
+方法三：使用在线编译器
+-----------------------
+可以使用在线C++编译器（如：
+- https://www.onlinegdb.com/
+- https://replit.com/
+- https://cpp.sh/
+
+将代码复制到在线编译器，编译运行即可。
+
+
+方法四：使用CMake（如果已安装）
+------------------------------
+1. 创建build目录：
+   mkdir build
+   cd build
+
+2. 运行CMake：
+   cmake ..
+
+3. 编译：
+   cmake --build .
+
+4. 运行：
+   ./词法分析器 program1.txt
+
+
+快速测试（如果已安装编译器）
+----------------------------
+在项目目录下执行：
+compile.bat
+
+或者直接运行：
+g++ -std=c++11 main.cpp lexer.cpp -o 词法分析器.exe
+词法分析器.exe program1.txt
+
+
+程序使用说明
+-----------
+1. 将需要分析的C语言源程序保存为.txt文件（如program1.txt）
+2. 运行程序：
+   词法分析器.exe program1.txt
+3. 程序会输出分析结果到控制台，并保存到output.txt文件
+4. 查看output.txt文件查看完整的分析结果
+
+测试文件
+-------
+项目包含以下测试文件：
+- program1.txt：基本程序示例
+- program2.txt：条件语句示例  
+- program3.txt：循环语句示例
+
+您可以创建自己的测试文件进行分析。
+

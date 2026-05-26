@@ -1,0 +1,35 @@
+# 词法分析器编译指南
+
+由于批处理文件无法自动设置Visual Studio环境，您需要按照以下步骤手动编译程序：
+
+## 编译步骤
+
+1. **打开Visual Studio命令提示符**：
+   - 方法1：在开始菜单搜索"Developer Command Prompt for VS"
+   - 方法2：在开始菜单搜索"x64 Native Tools Command Prompt for VS"
+   - 方法3：如果找不到上述选项，可以先打开Visual Studio，然后从工具栏选择"Tools" > "Command Line" > "Developer Command Prompt"
+
+2. **导航到程序所在目录**：
+   ```
+   cd "c:\Users\张政笑\OneDrive\Desktop\编译原理"
+   ```
+
+3. **执行编译命令**：
+   ```
+   cl /EHsc main.cpp lexer.cpp user32.lib /Fe词法分析器.exe
+   ```
+
+## 运行程序
+
+编译成功后，会生成"词法分析器.exe"文件。您可以：
+- 在命令提示符中直接运行：`词法分析器.exe`
+- 或者在文件资源管理器中双击运行
+
+## 注意事项
+
+- 确保Visual Studio已正确安装在您的计算机上
+- 编译命令中的user32.lib是Windows API库，用于创建图形界面
+- 编译后会生成.obj文件和.exe文件
+- 如果编译失败，请检查是否正确设置了Visual Studio环境
+
+祝您使用愉快！

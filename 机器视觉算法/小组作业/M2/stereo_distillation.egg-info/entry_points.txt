@@ -1,0 +1,3 @@
+[console_scripts]
+stereo-eval = stereo_distillation.cli.eval:main
+stereo-train = stereo_distillation.cli.train:main

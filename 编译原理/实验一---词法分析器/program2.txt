@@ -1,0 +1,12 @@
+main()
+{
+    int a,b,c;
+    a=10;
+    b=20;
+    if(a>b)
+        c=a;
+    else
+        c=b;
+    printf("max=%d",c);
+}
+

@@ -1,0 +1,11 @@
+torch>=1.12
+torchvision
+numpy
+opencv-python
+albumentations
+tqdm
+tensorboard
+omegaconf
+kornia
+scipy
+pyyaml

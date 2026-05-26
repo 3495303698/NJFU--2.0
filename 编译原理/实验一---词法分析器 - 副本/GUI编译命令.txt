@@ -1,0 +1,50 @@
+# 词法分析器GUI版本编译命令
+
+## 重要说明
+请务必按照以下步骤操作，确保程序正确编译为纯图形界面应用程序。
+
+## 编译步骤
+
+1. **打开Visual Studio命令提示符**
+   - 在开始菜单中搜索 "Developer Command Prompt"
+   - 或者搜索 "x64 Native Tools Command Prompt for VS"
+   - 右键点击并选择「以管理员身份运行」
+
+2. **导航到程序所在目录**
+   在命令提示符中输入：
+   ```
+   cd "c:\Users\张政笑\OneDrive\Desktop\编译原理"
+   ```
+
+3. **运行编译命令**
+   直接在命令提示符中输入以下命令：
+   ```
+   cl /EHsc /D "WIN32" /D "_WINDOWS" /D "_UNICODE" /D "UNICODE" /Fe词法分析器.exe /link /subsystem:windows main.cpp lexer.cpp user32.lib
+   ```
+
+## 命令说明
+- `/EHsc` - 启用C++异常处理
+- `/D "WIN32" /D "_WINDOWS"` - 定义Windows相关宏
+- `/D "_UNICODE" /D "UNICODE"` - 启用Unicode支持
+- `/Fe词法分析器.exe` - 指定输出文件名
+- `/link /subsystem:windows` - 编译为GUI应用程序，不显示控制台窗口
+- `user32.lib` - 链接Windows用户界面库
+
+## 注意事项
+- 如果编译成功，会生成 `词法分析器.exe` 文件
+- 这将是一个纯图形界面应用程序，双击即可运行
+- 确保所有源文件（main.cpp, lexer.cpp, lexer.h）都在同一目录下
+- 如果遇到编译错误，请检查源文件是否完整无误
+
+---
+
+## 替代方法（如果Visual Studio不可用）
+
+如果您没有安装Visual Studio，可以尝试以下方法：
+
+1. 安装MinGW或TDM-GCC编译器
+2. 使用g++编译：
+   ```
+   g++ -o 词法分析器.exe -mwindows main.cpp lexer.cpp
+   ```
+   注意：`-mwindows` 选项确保编译为GUI应用程序

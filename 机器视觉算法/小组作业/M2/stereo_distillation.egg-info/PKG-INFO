@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: stereo_distillation
+Version: 0.1.0
+Summary: Stereo Matching Distillation Framework
+Author: Your Name
+Author-email: your.email@example.com
+Requires-Python: >=3.8
+Requires-Dist: torch>=1.12
+Requires-Dist: torchvision
+Requires-Dist: numpy
+Requires-Dist: opencv-python
+Requires-Dist: albumentations
+Requires-Dist: tqdm
+Requires-Dist: tensorboard
+Requires-Dist: omegaconf
+Requires-Dist: kornia
+Requires-Dist: scipy
+Requires-Dist: pyyaml
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

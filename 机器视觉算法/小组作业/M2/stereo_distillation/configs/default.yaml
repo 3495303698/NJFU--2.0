@@ -1,0 +1,21 @@
+# Default configuration for stereo distillation
+model:
+  teacher:
+    type: "simple_cnn"
+    pretrained: false
+  student:
+    type: "simple_cnn_small"
+
+training:
+  batch_size: 4
+  epochs: 10
+  learning_rate: 0.001
+  alpha: 0.7  # distillation weight
+
+data:
+  dataset: "synthetic"
+  image_size: [64, 64]
+
+logging:
+  use_tensorboard: true
+  log_dir: "logs/"

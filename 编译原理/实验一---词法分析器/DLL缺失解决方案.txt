@@ -1,0 +1,40 @@
+# libgcc_s_seh-1.dll缺失问题解决方案
+
+## 问题描述
+运行词法分析器时出现错误：找不到libgcc_s_seh-1.dll，无法继续执行代码
+
+## 原因分析
+该DLL文件是MinGW GCC编译器的运行时库文件，词法分析器可能是使用MinGW编译的，但运行环境中缺少这个必要的依赖文件。
+
+## 解决方案
+
+### 方法一：复制系统中已有的DLL文件（推荐）
+1. 系统中已找到以下位置的libgcc_s_seh-1.dll文件：
+   - C:\Program Files\Git\mingw64\libexec\git-core\libgcc_s_seh-1.dll
+   - C:\Program Files\Microsoft OneDrive\25.199.1012.0002\libgcc_s_seh-1.dll
+   - C:\Users\张政笑\.lingma\bin\2.5.17\x86_64_windows\libgcc_s_seh-1.dll
+   - 以及其他几个版本
+
+2. 请手动复制其中任意一个DLL文件到词法分析器.exe所在的目录：
+   `c:\Users\张政笑\OneDrive\Desktop\编译原理\`
+
+### 方法二：重新编译程序（使用Visual Studio）
+根据项目中的编译脚本，程序原本设计使用Visual Studio编译器编译。使用Visual Studio编译的程序不会依赖MinGW的DLL文件。
+
+1. 打开Visual Studio命令提示符（Developer Command Prompt）
+2. 导航到项目目录：
+   `cd c:\Users\张政笑\OneDrive\Desktop\编译原理`
+3. 运行编译脚本：
+   `编译GUI应用.bat`
+
+### 方法三：安装MinGW
+1. 下载并安装MinGW-w64
+2. 将MinGW的bin目录添加到系统环境变量Path中
+
+## 后续验证
+复制DLL文件后，请直接双击词法分析器.exe尝试运行。如果还有其他DLL缺失，请按照相同方法解决。
+
+## 注意事项
+- 确保复制的DLL文件版本与系统架构匹配（32位/64位）
+- 从可靠来源获取DLL文件，避免安全风险
+- 最好的长期解决方案是使用Visual Studio重新编译程序
